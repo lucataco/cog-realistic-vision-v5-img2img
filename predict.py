@@ -22,7 +22,6 @@ class Predictor(BasePredictor):
             "cache",
             vae=vae,
         )
-        # pipe.unet = torch.compile(pipe.unet, mode="reduce-overhead", fullgraph=True)
         self.pipe = pipe.to("cuda")
 
     def scale_down_image(self, image_path, max_size):
